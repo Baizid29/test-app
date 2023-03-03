@@ -1,0 +1,13 @@
+
+<div class="card mt-4 text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Name: {{data.username}}  </h5>
+    <h6 class="card-subtitle mb-2 text-muted">Eamil: {{data.email}}   </h6>
+    <p class="card-text">Mobile No: {{data.mobile}}  </p>
+
+    <button class="btn btn-primary mb-4" [routerLink]="['/edit-profile']" >Edit</button>
+    <button class="btn btn-danger mb-4" (click)="logout()">LogOut</button>
+  </div>
+
+</div>
+

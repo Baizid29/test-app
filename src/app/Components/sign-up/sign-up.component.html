@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+              <div class="text-center">
+                  <h1>Sign Up</h1>
+                  <h6>Please enter Your Details!!</h6>
+              </div>
+              <form [formGroup]="registerForm" (ngSubmit)="registerData(registerForm.value)" >
+                  <div class="mb-3">
+                      <label  class="form-label">User Name</label>
+                      <input class="form-control" placeholder="User Name" type="text" formControlName="username" [class.is-invalid]="f['username'].touched && f['username'].invalid" >
+                  </div>
+
+                  <div class="alert alert-danger" *ngIf="f['username'].touched && f['username'].invalid">
+                    <div *ngIf="f['username'].errors?.['required']">User Name Required</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email Address</label>
+                    <input class="form-control" placeholder="Email" type="string" formControlName="email" [class.is-invalid]="f['email'].touched && f['email'].invalid" >
+                  </div>
+
+                  <div class="alert alert-danger" *ngIf="f['email'].touched && f['email'].invalid">
+                    <div *ngIf="f['email'].errors?.['required']">Email Required</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mobile No</label>
+                    <input class="form-control" placeholder="Mobile No" type="text" formControlName="mobile" [class.is-invalid]="f['mobile'].touched && f['mobile'].invalid" >
+                  </div>
+
+                  <div class="alert alert-danger" *ngIf="f['mobile'].touched && f['mobile'].invalid">
+                    <div *ngIf="f['mobile'].errors?.['required']">Mobile No Required</div>
+                  </div>
+
+                  <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input class="form-control" placeholder="Password" type="password" formControlName="password" [class.is-invalid]="f['password'].touched && f['password'].invalid">
+                  </div>
+
+                  <div class="alert alert-danger" *ngIf="f['password'].touched && f['password'].invalid">
+                    <div *ngIf="f['password'].errors?.['required']">Password Required</div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Sign Up</button>
+              </form>
+              <!-- <a style="color: #fff;" routerLink="/register">New user? Click to register</a> -->
+          </div>
+      </div>
+  </div>
+</div>
